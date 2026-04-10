@@ -1,39 +1,37 @@
 name: synapse-layer
-description: Zero-Knowledge persistent memory for AI agents. Store, recall and transfer encrypted context across models (Claude, GPT, Gemini, Grok, Llama). MCP-native. Neural Handover™. Conflict Resolution Engine™.
+description: >-
+  Synapse Layer — Continuous Consciousness Infrastructure for AI Systems.
+  Persistent, secure, 1-line integration. AES-256-GCM encryption, PII
+  redaction, Trust Quotient scoring, and deterministic recall. MCP-native.
 author: Ismael Marchi
 homepage: https://synapselayer.org
-repository: https://github.com/SynapseLayer/essencial
-npm: synapse-layer
-mcp_server: https://rbeycxzizrrdmxpilepc.supabase.co/functions/v1/mcp-server
+repository: https://github.com/SynapseLayer/synapse-layer
+pypi: synapse-layer
+mcp_server: https://forge.synapselayer.org/api/mcp
+version: "1.1.0"
 keywords:
   - agent persistent memory
   - cross-model context transfer
   - zero-knowledge memory store
   - recall past conversation
-  - memory handover between models
-  - semantic memory search
   - encrypted context storage
   - agent memory MCP
   - long-term memory LLM
-  - neural handover agent
-  - pgvector semantic recall
-  - conflict resolution memory
+  - aes-256-gcm
+  - continuous consciousness
+  - sqlite backend
+  - trust quotient
+  - pii redaction
 commands:
-  - name: remember
-    description: Store encrypted memory with zero-knowledge encryption
-    usage: synapse remember "<text>" --user <id> [--importance 0.0-1.0]
+  - name: save_to_synapse
+    description: Persist structured memory with full Cognitive Security pipeline
+    usage: synapse save "<text>" --agent <id>
   - name: recall
-    description: Retrieve memories by semantic query
-    usage: synapse recall "<query>" --user <id> [--limit 5]
-  - name: handover
-    description: Export signed context package for model migration
-    usage: synapse handover --to <model> --user <id> [--expires 3600]
-  - name: import
-    description: Import handover package to restore context
-    usage: synapse import --blob <base64> --user <id>
-  - name: status
-    description: Check memory vault health and Trust Score
-    usage: synapse status --user <id>
-  - name: forget
-    description: Soft-delete memory (LGPD/GDPR compliant)
-    usage: synapse forget "<query>" --user <id>
+    description: Deterministic memory retrieval ranked by Trust Quotient
+    usage: synapse recall "<query>" --agent <id> [--limit 10]
+  - name: process_text
+    description: Auto-extract decisions, milestones and alerts from text
+    usage: synapse process "<text>" --agent <id>
+  - name: health_check
+    description: System health, version, memory count and capability report
+    usage: synapse health

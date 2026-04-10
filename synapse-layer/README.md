@@ -1,98 +1,64 @@
 # 🧠 Synapse Layer
 
-> *"Giving Agents a Past. Giving Models a Soul."*
+> **Continuous Consciousness Infrastructure for AI Systems**
 
-**Synapse Layer** is the universal memory layer for AI agents — persistent, private, model-agnostic, and open-source.
+Persistent, secure, 1-line integration. AES-256-GCM encryption, PII redaction, and deterministic recall via Trust Quotient™.
 
-## Overview
+[![PyPI](https://img.shields.io/pypi/v/synapse-layer?color=blue)](https://pypi.org/project/synapse-layer/)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
+[![MCP Compatible](https://img.shields.io/badge/MCP-Compatible-purple)](https://forge.synapselayer.org/api/mcp)
 
-Synapse Layer provides **zero-knowledge persistent memory** for AI agents. All data is encrypted client-side with AES-256-GCM before leaving the device. The server **never** sees plaintext data.
+---
 
-### Core Features
-
-- **Zero-Knowledge Context™** — AES-256-GCM encryption with PBKDF2 key derivation (210k iterations)
-- **Neural Handover™** — HMAC-SHA256 signed context transfer between AI models
-- **Consensus Engine™** — Trust Quotient formula resolves contradictory memories
-- **Semantic Recall** — pgvector HNSW index with gte-small embeddings (384-dim)
-- **MCP-Native** — Works with any MCP-compatible agent (Claude, Cursor, etc.)
-- **LGPD/GDPR Compliant** — Soft-delete with audit trails
-
-## Installation
+## Quick Start
 
 ```bash
-# npm global install
-npm install -g synapse-layer
-
-# Or use directly with npx
-npx synapse-layer remember "User prefers dark mode" --user <uuid>
+pip install synapse-layer
 ```
 
-## Commands
+```python
+from synapse_memory import SynapseMemory, SqliteBackend, remember
 
-### `synapse remember`
-Store a memory with zero-knowledge AES-256-GCM encryption.
-```bash
-synapse remember "User prefers dark mode" --user <uuid> --importance 0.9
-```
+memory = SynapseMemory(agent_id="my-agent", backend=SqliteBackend())
 
-### `synapse recall`
-Semantic recall via pgvector HNSW cosine similarity.
-```bash
-synapse recall "What are user preferences?" --user <uuid> --limit 5
-```
-
-### `synapse handover`
-Neural Handover™ — transfer full context between AI models with HMAC-SHA256 signing.
-```bash
-synapse handover --to gpt-4o --user <uuid>
-```
-
-### `synapse import`
-Import a handover package to restore context in a new model.
-```bash
-synapse import --blob <base64> --user <uuid>
-```
-
-### `synapse status`
-Check memory vault health, Trust Score, and active memory count.
-```bash
-synapse status --user <uuid>
-```
-
-### `synapse forget`
-Soft-delete a memory (LGPD/GDPR compliant — encrypted data retained for audit).
-```bash
-synapse forget "outdated preference" --user <uuid>
+@remember(memory)
+async def answer(prompt: str) -> str:
+    return llm.chat(prompt)  # auto recall + store
 ```
 
 ## MCP Configuration
-
-Add to your MCP client config:
 
 ```json
 {
   "mcpServers": {
     "synapse-layer": {
-      "url": "https://rbeycxzizrrdmxpilepc.supabase.co/functions/v1/mcp-server"
+      "url": "https://forge.synapselayer.org/api/mcp"
     }
   }
 }
 ```
 
-## Trust Quotient Formula
+## Tools
 
-```
-TQ = importance(35%) + confidence(25%) + stability(20%) + credit(10%) + recency(10%)
-```
+| Tool | Description |
+|---|---|
+| `save_to_synapse` | Structured memory persistence with full security pipeline |
+| `recall` | Semantic memory retrieval with TQ ranking |
+| `process_text` | Autonomous decision/milestone/alert detection |
+| `health_check` | System health, version, capability report |
 
-Source type multipliers: Finance (1.5x) · Health (1.2x) · Legal (1.1x)
+## Core Repository
+
+Full SDK, documentation and architecture:
+→ [github.com/SynapseLayer/synapse-layer](https://github.com/SynapseLayer/synapse-layer)
 
 ## Links
 
-- 🌐 **Homepage**: [synapselayer.org](https://synapselayer.org)
-- 📦 **npm**: [synapse-layer](https://www.npmjs.com/package/synapse-layer)
-- 🔧 **GitHub**: [SynapseLayer/essencial](https://github.com/SynapseLayer/essencial)
-- 🏭 **Smithery**: [synapselayer/essencial](https://smithery.ai/servers/synapselayer/essencial)
+- 🌐 **Website**: [synapselayer.org](https://synapselayer.org)
+- 📖 **Docs**: [docs.synapselayer.org](https://docs.synapselayer.org)
+- 📦 **PyPI**: [pypi.org/project/synapse-layer](https://pypi.org/project/synapse-layer/)
+- 🔌 **MCP**: `forge.synapselayer.org/api/mcp`
+- 🛠️ **Smithery**: [smithery.ai/servers/synapselayer/synapse-protocol](https://smithery.ai/servers/synapselayer/synapse-protocol)
 
 ## License
 
