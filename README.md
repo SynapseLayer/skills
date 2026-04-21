@@ -5,6 +5,7 @@ AI agent skills for 150+ models via [inference.sh](https://inference.sh) CLI. Ge
 ![inference.sh](https://cloud.inference.sh/app/files/u/4mg21r6ta37mpaz6ktzwtt8krr/01kgvqa60jjrqa47j3g5s6ce6v.jpeg)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![synapse-layer v1.2.0](https://img.shields.io/badge/synapse--layer-v1.2.0-blue)](https://pypi.org/project/synapse-layer/1.2.0/)
 
 ## Contents
 

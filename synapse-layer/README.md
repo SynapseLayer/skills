@@ -1,5 +1,8 @@
 # 🧠 Synapse Layer
 
+> **Current version: v1.2.0** — [PyPI](https://pypi.org/project/synapse-layer/1.2.0/)
+
+
 > **Continuous Consciousness Infrastructure for AI Systems**
 
 Persistent, secure, 1-line integration. AES-256-GCM encryption, PII redaction, and deterministic recall via Trust Quotient™.

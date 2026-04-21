@@ -1,7 +1,7 @@
 {
   "name": "synapse-layer",
   "description": "Persistent zero-knowledge memory for AI agents. Store, recall and transfer encrypted context across models via MCP.",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "homepage": "https://synapselayer.org",
   "repository": "https://github.com/SynapseLayer/essencial",
   "license": "Apache-2.0",
